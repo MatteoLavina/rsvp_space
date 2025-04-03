@@ -11,7 +11,7 @@
       background: #f9f9f9;
     }
     form {
-      max-width: 400px;
+      max-width: 500px;
       margin: auto;
       background: white;
       padding: 2em;
@@ -45,7 +45,8 @@
   </style>
 </head>
 <body>
-  <form name="rsvp" method="POST" data-netlify="true">
+
+  <form action="https://formsubmit.co/matty06.1993@gmail.com" method="POST">
     <h2>RSVP Form</h2>
 
     <label for="name">First Name</label>
@@ -67,7 +68,13 @@
     <label for="question2">Any message for the organizers?</label>
     <textarea id="question2" name="question2" rows="2"></textarea>
 
+    <!-- Anti-spam and settings -->
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://matteolavina.github.io/rsvp_space/thankyou.html">
+
     <button type="submit">Submit</button>
   </form>
+
 </body>
 </html>
