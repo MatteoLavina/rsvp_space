@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1em;
+      background: #f9f9f9;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1.5em;
+      padding: 0.7em 1.5em;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <form name="rsvp" method="POST" data-netlify="true">
+    <h2>RSVP Form</h2>
+
+    <label for="name">First Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="surname">Last Name</label>
+    <input type="text" id="surname" name="surname" required />
+
+    <label for="confirmation">Will you attend?</label>
+    <select id="confirmation" name="confirmation" required>
+      <option value="">-- Please choose --</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <label for="question1">Do you have any dietary restrictions?</label>
+    <textarea id="question1" name="question1" rows="2"></textarea>
+
+    <label for="question2">Any message for the organizers?</label>
+    <textarea id="question2" name="question2" rows="2"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
