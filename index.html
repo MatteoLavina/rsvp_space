@@ -1,83 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RSVP Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP Matrimonio</title>
 
-  <!-- Pageclip stylesheet -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Pageclip CSS -->
   <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 1em;
-      background: #f9f9f9;
-    }
-    form {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 2em;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 1em;
-      font-weight: bold;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.5em;
-      margin-top: 0.3em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button.pageclip-form__submit {
-      margin-top: 1.5em;
-      padding: 0.7em 1.5em;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button.pageclip-form__submit:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-  <form action="https://send.pageclip.co/MO2kJKQLnfVZ38xNrUY2QW6MXZPbcZQH/RSVP" class="pageclip-form" method="POST">
-    <h2>RSVP Form</h2>
+  <!-- Banner Image -->
+  <img src="assets/images/banner.jpg" alt="Banner Matrimonio" class="animate__animated animate__fadeInDown" style="width: 100%; border-radius: 12px; margin-bottom: 1em;" />
 
-    <label for="name">First Name</label>
+  <!-- Countdown Timer -->
+  <div id="countdown" class="animate__animated animate__fadeIn" style="text-align: center; font-size: 1.5em; margin-bottom: 1.5em; font-family: 'Playfair Display', serif;"></div>
+
+  <!-- RSVP Form -->
+  <form action="https://send.pageclip.co/MO2kJKQLnfVZ38xNrUY2QW6MXZPbcZQH/RSVP" class="pageclip-form animate__animated animate__fadeInUp" method="POST">
+    <h2 style="text-align: center; font-family: 'Playfair Display', serif;">Conferma la tua presenza</h2>
+
+    <label for="name">Nome</label>
     <input type="text" id="name" name="name" required />
 
-    <label for="surname">Last Name</label>
+    <label for="surname">Cognome</label>
     <input type="text" id="surname" name="surname" required />
 
-    <label for="confirmation">Will you attend?</label>
+    <label for="confirmation">Parteciperai?</label>
     <select id="confirmation" name="confirmation" required>
-      <option value="">-- Please choose --</option>
-      <option value="yes">Yes</option>
+      <option value="">-- Seleziona --</option>
+      <option value="yes">Sì</option>
       <option value="no">No</option>
     </select>
 
-    <label for="question1">Do you have any dietary restrictions?</label>
+    <label for="question1">Hai esigenze alimentari particolari?</label>
     <textarea id="question1" name="question1" rows="2"></textarea>
 
-    <label for="question2">Any message for the organizers?</label>
+    <label for="question2">Vuoi lasciare un messaggio agli sposi?</label>
     <textarea id="question2" name="question2" rows="2"></textarea>
 
     <button type="submit" class="pageclip-form__submit">
-      <span>Send</span>
+      <span>Invia RSVP</span>
     </button>
   </form>
 
-  <!-- Pageclip script -->
+  <!-- Scripts -->
   <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+  <script src="assets/js/countdown.js"></script>
 </body>
 </html>
