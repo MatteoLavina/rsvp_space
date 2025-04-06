@@ -101,34 +101,14 @@
   <!-- Slideshow Script -->
   <script src="assets/js/slideshow.js"></script>
 
-
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.querySelector(".pageclip-form");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Stop default form submit
-
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            "Accept": "application/json"
-          }
-        })
-                .then(response => {
-                  if (response.ok) {
-                    window.location.href = "thankyou.html";
-                  } else {
-                    alert("Errore nell'invio del form. Riprova più tardi.");
-                  }
-                })
-                .catch(error => {
-                  console.error("Form submission error:", error);
-                  alert("Errore di connessione.");
-                });
+    document.addEventListener('DOMContentLoaded', function () {
+      Pageclip.form(document.querySelector('.pageclip-form'), {
+        onSubmit: function () {
+          setTimeout(function () {
+            window.location.href = "thankyou.html";
+          }, 500); // piccolo delay per sicurezza
+        }
       });
     });
   </script>
