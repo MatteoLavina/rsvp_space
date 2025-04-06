@@ -1,14 +1,24 @@
 // Imposta la data del tuo matrimonio qui:
 const eventDate = new Date('2025-10-25T15:00:00').getTime();
-const countdownElem = document.getElementById('countdown');
 
-const x = setInterval(() => {
+function pad(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function animateCircle(id) {
+  const element = document.getElementById(id).parentElement;
+  element.classList.add('animate__animated', 'animate__pulse');
+  setTimeout(() => {
+    element.classList.remove('animate__animated', 'animate__pulse');
+  }, 500);
+}
+
+setInterval(() => {
   const now = new Date().getTime();
   const distance = eventDate - now;
 
   if (distance < 0) {
-    clearInterval(x);
-    countdownElem.innerHTML = 'Oggi � il grande giorno! ?';
+    document.getElementById('countdown').innerHTML = 'Oggi è il grande giorno! 🎉';
     return;
   }
 
@@ -17,12 +27,12 @@ const x = setInterval(() => {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdownElem.innerHTML = `
-    Mancano 
-    <strong>${days}</strong> giorni 
-    <strong>${hours}</strong> ore 
-    <strong>${minutes}</strong> minuti 
-    <strong>${seconds}</strong> secondi
-    al grande giorno!
-  `;
+  document.getElementById("days").textContent = pad(days);
+  document.getElementById("hours").textContent = pad(hours);
+  document.getElementById("minutes").textContent = pad(minutes);
+  document.getElementById("seconds").textContent = pad(seconds);
+
+  // Optional: pulse animation each second
+  animateCircle("seconds");
+
 }, 1000);

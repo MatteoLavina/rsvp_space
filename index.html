@@ -16,6 +16,9 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
+	
+  <!-- Custom Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,13 +26,36 @@
     <!-- Left column: banner/image -->
     <div class="left-column animate__animated animate__fadeInDown">
       <!-- Replace with your actual banner image -->
-      <img src="assets/images/banner.jpg" alt="Banner Matrimonio">
+      <img src="assets/images/rsvp-left.jpg" alt="Banner Matrimonio">
     </div>
 
     <!-- Right column: countdown + RSVP form -->
     <div class="right-column animate__animated animate__fadeInUp">
       <!-- Countdown Timer -->
-      <div id="countdown"></div>
+      <!-- div id="countdown"></div> -->
+
+      <!-- New Countdown -->
+<div class="countdown-wrapper animate__animated animate__fadeInUp">
+  <h2 class="countdown-title">Mancano al grande giorno:</h2>
+  <div id="countdown" class="countdown-circles">
+    <div class="time-circle">
+      <span id="days">00</span>
+      <div class="label">Giorni</div>
+    </div>
+    <div class="time-circle">
+      <span id="hours">00</span>
+      <div class="label">Ore</div>
+    </div>
+    <div class="time-circle">
+      <span id="minutes">00</span>
+      <div class="label">Minuti</div>
+    </div>
+    <div class="time-circle">
+      <span id="seconds">00</span>
+      <div class="label">Secondi</div>
+    </div>
+  </div>
+</div>
 
       <!-- RSVP Form -->
       <form 

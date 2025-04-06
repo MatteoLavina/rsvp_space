@@ -7,17 +7,11 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-
-  /* 
-    A gradient + floral pattern background
-    1) floral-bg.jpg = your image in assets/images/
-    2) linear-gradient = fallback color behind
-  */
   background-image:
-    url('../images/floral-bg.jpg'),
+    url('../images/Autumn Leaves Phone Wallpaper.png'),
     linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  background-repeat: repeat; /* or 'no-repeat' + 'cover' if single large image */
-  background-size: auto, cover; /* pattern is auto, gradient covers screen */
+  background-repeat: repeat;
+  background-size: auto, cover;
 
   min-height: 100vh;
   display: flex;
@@ -30,14 +24,10 @@ body {
   display: flex;
   width: 90%;
   max-width: 1000px;
-
-  /* White with some transparency to see the floral background behind */
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
-  overflow: hidden; /* for rounded corners */
+  overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-
-  /* optional blur for the background behind container */
   backdrop-filter: blur(4px);
 }
 
@@ -67,32 +57,84 @@ body {
 }
 
 /* Countdown text */
-#countdown {
+.countdown-wrapper {
   text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 1.5em;
-  font-family: 'Playfair Display', serif;
-  color: #333;
+  margin-bottom: 2em;
+}
+
+.countdown-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  color: #5a3e36;
+  margin-bottom: 0.5em;
+}
+
+.countdown-circles {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.time-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #a96c6c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8em;
+  color: #5a3e36;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.time-circle:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.time-circle span {
+  font-weight: bold;
+}
+
+.label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.4em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  position: absolute;
+  bottom: 12px;
 }
 
 /* Form styles */
 form {
   width: 100%;
   max-width: 400px;
-  margin: 0 auto; /* center in the column */
+  margin: 0 auto;
 }
 form h2 {
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
   margin-bottom: 1em;
-  color: #333;
+  color: #5a3e36;
 }
+
 label {
   display: block;
   margin-top: 1em;
-  font-weight: bold;
-  color: #555;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.4rem;
+  color: #6b4b3e;
 }
+
 input, select, textarea {
   width: 100%;
   margin-top: 0.5em;
@@ -101,26 +143,43 @@ input, select, textarea {
   border-radius: 6px;
   font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
 }
+
 textarea {
   resize: vertical;
 }
+
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Great Vibes', cursive;
+  font-style: italic;
+  color: #a7928f;
+}
+
 button.pageclip-form__submit {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 0.75em 1.5em;
-  border: none;
-  border-radius: 6px;
-  margin-top: 1.5em;
+  background: linear-gradient(to right, #fefcea, #f1daae); /* soft gold-beige */
+  color: #5a3e36;
+  padding: 0.9em 2.5em;
+  border: 2px solid #e0c793;
+  border-radius: 40px;
+  font-size: 1.4rem;
+  font-family: 'Great Vibes', cursive;
+  font-weight: normal;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(222, 190, 130, 0.3);
+  letter-spacing: 0.5px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 button.pageclip-form__submit:hover {
-  background-color: #45a049;
+  background: linear-gradient(to right, #f6e8d3, #f0c27b);
+  color: #4b3621;
+  box-shadow: 0 6px 20px rgba(176, 144, 89, 0.5);
+  transform: translateY(-2px);
 }
 
 /* Responsive: stack columns on smaller screens */
@@ -135,5 +194,10 @@ button.pageclip-form__submit:hover {
   }
   .left-column {
     max-height: 250px;
+  }
+  .time-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 1.2em;
   }
 }
