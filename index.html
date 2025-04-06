@@ -20,13 +20,19 @@
   <!-- Custom Font -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <div class="container animate__animated animate__fadeIn">
     <!-- Left column: banner/image -->
     <div class="left-column animate__animated animate__fadeInDown">
       <!-- Replace with your actual banner image -->
-      <img src="assets/images/rsvp-left.jpg" alt="Banner Matrimonio">
+      <img class="slide active" src="assets/images/rsvp-left.jpg" alt="Foto 1">
+      <img class="slide" src="assets/images/rsvp-left.jpg" alt="Foto 2">
+      <img class="slide" src="assets/images/rsvp-left.jpg" alt="Foto 3">
+
+
+
     </div>
 
     <!-- Right column: countdown + RSVP form -->
@@ -35,7 +41,7 @@
       <!-- div id="countdown"></div> -->
 
       <!-- New Countdown -->
-<div class="countdown-wrapper animate__animated animate__fadeInUp">
+      <div class="countdown-wrapper animate__animated animate__fadeInUp">
   <h2 class="countdown-title">Mancano al grande giorno:</h2>
   <div id="countdown" class="countdown-circles">
     <div class="time-circle">
@@ -95,6 +101,30 @@
   
   <!-- Countdown Script -->
   <script src="assets/js/countdown.js"></script>
+  <!-- Slideshow Script -->
+  <script src="assets/js/slideshow.js"></script>
+	
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".pageclip-form");
+
+    form.addEventListener("submit", function () {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.target.classList.contains("pageclip-form__submitted")) {
+            window.location.href = "thankyou.html";
+          }
+        });
+      });
+
+      observer.observe(form, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    });
+  });
+</script>
 
   <!-- SNIPPET PostHog (analytics) -->
   <script>
