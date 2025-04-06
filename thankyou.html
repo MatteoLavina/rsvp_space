@@ -1,44 +1,87 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grazie!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grazie di cuore</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Custom Styles (same CSS as index) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f0f8ff;
+    .thankyou-wrapper {
       text-align: center;
-      padding: 5em 1em;
-    }
-    .box {
-      background: white;
-      max-width: 500px;
-      margin: auto;
-      padding: 2em;
+      background-color: rgba(255,255,255,0.85);
+      padding: 3em 2em;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 10vh auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
-    h1 {
-      color: #4CAF50;
-      font-family: 'Playfair Display', serif;
+
+    .thankyou-wrapper h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #5a3e36;
+      margin-bottom: 0.5em;
     }
-    a {
-      display: inline-block;
-      margin-top: 2em;
-      padding: 0.6em 1.2em;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+
+    .thankyou-wrapper p {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 2em;
+    }
+
+    .close-btn {
+      background-color: #a96c6c;
+      color: #fff;
+      border: none;
+      padding: 0.8em 2em;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-family: 'Open Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .close-btn:hover {
+      background-color: #8f5c5c;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>🎉 Grazie per la conferma!</h1>
-    <p>La tua risposta è stata ricevuta.<br>Non vediamo l'ora di festeggiare con te!</p>
-    <a href="index.html">Torna alla pagina principale</a>
-  </div>
+
+<!-- Optional video background -->
+<!--
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="assets/videos/landscape.mp4" type="video/mp4">
+</video>
+-->
+
+<!-- Optional background overlay -->
+<div class="overlay"></div>
+
+<div class="thankyou-wrapper animate__animated animate__fadeInDown">
+  <h1>Grazie di cuore!</h1>
+  <p>La tua conferma è stata ricevuta. Non vediamo l'ora di festeggiare con te!</p>
+  <button class="close-btn" onclick="closeWindow()">Chiudi</button>
+</div>
+
+<script>
+  function closeWindow() {
+    if (window.opener) {
+      window.close(); // closes popup/tab
+    } else {
+      window.location.href = 'index.html'; // fallback to homepage
+    }
+  }
+</script>
+
 </body>
 </html>
