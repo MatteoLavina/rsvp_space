@@ -25,14 +25,21 @@
 
   <div class="container animate__animated animate__fadeIn">
     <!-- Left column: banner/image -->
-    <div class="left-column animate__animated animate__fadeInDown">
-      <!-- Replace with your actual banner image -->
-      <img class="slide active" src="assets/images/rsvp-left.jpg" alt="Foto 1">
-      <img class="slide" src="assets/images/FullSizeRender.jpg" alt="Foto 2">
-      <img class="slide" src="assets/images/IMG_4437.JPG" alt="Foto 3">
-      <img class="slide" src="assets/images/IMG_6300.jpg" alt="Foto 4">
-      <img class="slide" src="assets/images/IMG_7593.jpg" alt="Foto 5">
-    </div>
+	<div class="left-column animate__animated animate__fadeInDown">
+	  <!-- Slider for Desktop -->
+	  <div class="slider-container desktop-slider">
+		<img class="slide active" src="assets/images/rsvp-left.jpg" alt="Foto 1">
+		<img class="slide" src="assets/images/FullSizeRender.jpg" alt="Foto 2">
+		<img class="slide" src="assets/images/IMG_4437.JPG" alt="Foto 3">
+		<img class="slide" src="assets/images/IMG_6300.jpg" alt="Foto 4">
+		<img class="slide" src="assets/images/IMG_7593.jpg" alt="Foto 5">
+	  </div>
+
+	  <!-- Single Banner for Mobile -->
+	  <div class="mobile-banner">
+		<img src="assets/images/rsvp-left.jpg" alt="Banner Matrimonio">
+	  </div>
+	</div>
 
     <!-- Right column: countdown + RSVP form -->
     <div class="right-column animate__animated animate__fadeInUp">
@@ -79,9 +86,14 @@
         <select id="confirmation" name="confirmation" required>
           <option value="">-- Seleziona --</option>
           <option value="yes">Sì</option>
+		  <option value="yes_cake">Si, solo per taglio torta</option>
           <option value="no">No</option>
         </select>
+		
+		<label for="number_participants">Quanti partecipanti (incluso te)?</label>
+		<input type="number" id="number_participants" name="number_participants" min="1" value="1" required />
 
+		<div id="additional_participants"></div>
         <label for="question1">Segui una dieta alimentare particolare? (Celiaca, vegetariana, vegana, ecc..)</label>
         <textarea id="question1" name="question1" rows="2"></textarea>
 
@@ -102,6 +114,8 @@
   <script src="assets/js/countdown.js"></script>
   <!-- Slideshow Script -->
   <script src="assets/js/slideshow.js"></script>
+  <!-- Additional Partecipants Script -->
+  <script src="assets/js/additional_partecipants.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {

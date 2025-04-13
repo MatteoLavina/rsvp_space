@@ -19,7 +19,6 @@ body {
   justify-content: center;
 }
 
-/* Main container with two columns */
 .container {
   display: flex;
   width: 90%;
@@ -31,14 +30,14 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* Left side: banner */
 .left-column {
   flex: 1;
-  background: #ddd;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
+
 .left-column img {
   width: 100%;
   height: 100%;
@@ -46,7 +45,15 @@ body {
   object-position: center;
 }
 
-/* Right side: countdown + form */
+.desktop-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-banner {
+  display: none;
+}
+
 .right-column {
   flex: 1;
   display: flex;
@@ -56,7 +63,6 @@ body {
   justify-content: center;
 }
 
-/* Countdown text */
 .countdown-wrapper {
   text-align: center;
   margin-bottom: 2em;
@@ -99,10 +105,6 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.time-circle span {
-  font-weight: bold;
-}
-
 .label {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.4em;
@@ -111,14 +113,6 @@ body {
   color: #888;
   position: absolute;
   bottom: 12px;
-}
-
-/* Slideshow styles */
-.slideshow {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
 
 .slide {
@@ -135,12 +129,26 @@ body {
   z-index: 1;
 }
 
-/* Form styles */
+.participant-group {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.participant-group h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
 form {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
 }
+
 form h2 {
   text-align: center;
   font-family: 'Great Vibes', cursive;
@@ -172,50 +180,40 @@ textarea {
   resize: vertical;
 }
 
-input::placeholder,
-textarea::placeholder {
-  font-family: 'Great Vibes', cursive;
-  font-style: italic;
-  color: #a7928f;
-}
-
 button.pageclip-form__submit {
-  background: linear-gradient(to right, #fefcea, #f1daae); /* soft gold-beige */
+  background: linear-gradient(to right, #fefcea, #f1daae);
   color: #5a3e36;
   padding: 0.9em 2.5em;
   border: 2px solid #e0c793;
   border-radius: 40px;
   font-size: 1.4rem;
   font-family: 'Great Vibes', cursive;
-  font-weight: normal;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(222, 190, 130, 0.3);
-  letter-spacing: 0.5px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto;
 }
 
 button.pageclip-form__submit:hover {
   background: linear-gradient(to right, #f6e8d3, #f0c27b);
   color: #4b3621;
-  box-shadow: 0 6px 20px rgba(176, 144, 89, 0.5);
   transform: translateY(-2px);
 }
 
-/* Responsive: stack columns on smaller screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
     max-width: 600px;
   }
-  .left-column, .right-column {
-    width: 100%;
-    height: auto;
+  .desktop-slider {
+    display: none;
   }
-  .left-column {
-    max-height: 250px;
+  .mobile-banner {
+    display: block;
+    height: 250px;
+    width: 100%;
   }
   .time-circle {
     width: 70px;
