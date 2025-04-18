@@ -70,40 +70,60 @@
 </div>
 
       <!-- RSVP Form -->
-      <form 
-        action="https://send.pageclip.co/MO2kJKQLnfVZ38xNrUY2QW6MXZPbcZQH/RSVP" 
-        class="pageclip-form"
-        method="POST">
-        <h2>Conferma la tua presenza</h2>
+      <!-- RSVP Form powered by Formspree, using your existing CSS classes -->
+        <form
+  action="https://formspree.io/f/mrbpwdon"
+  method="POST"
+  class="pageclip-form">
 
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name" required />
+  <!-- redirect to your thank‑you page -->
+  <input type="hidden" name="_next"   value="thankyou.html">
+  <!-- optional: ask Formspree to return JSON -->
+  <input type="hidden" name="_format" value="json">
 
-        <label for="surname">Cognome</label>
-        <input type="text" id="surname" name="surname" required />
+  <h2>Conferma la tua presenza</h2>
 
-        <label for="confirmation">Parteciperai?</label>
-        <select id="confirmation" name="confirmation" required>
-          <option value="">-- Seleziona --</option>
-          <option value="yes">Sì</option>
-		  <option value="yes_cake">Si, solo per taglio torta</option>
-          <option value="no">No</option>
-        </select>
-		
-		<label for="number_participants">Quanti partecipanti (incluso te)?</label>
-		<input type="number" id="number_participants" name="number_participants" min="1" value="1" required />
+  <label for="name">Nome</label>
+  <input type="text" id="name" name="name" required />
 
-		<div id="additional_participants"></div>
-        <label for="question1">Segui una dieta alimentare particolare? (Celiaca, vegetariana, vegana, ecc..)</label>
-        <textarea id="question1" name="question1" rows="2"></textarea>
+  <label for="surname">Cognome</label>
+  <input type="text" id="surname" name="surname" required />
 
-        <label for="question2">Ci sono allergie e/o intolleranze alimentari di cui dovremmo mettere al corrente il ristorante?</label>
-        <textarea id="question2" name="question2" rows="2"></textarea>
+  <label for="confirmation">Parteciperai?</label>
+  <select id="confirmation" name="confirmation" required>
+    <option value="">-- Seleziona --</option>
+    <option value="yes">Sì</option>
+    <option value="yes_cake">Sì, solo per taglio torta</option>
+    <option value="no">No</option>
+  </select>
 
-        <button type="submit" class="pageclip-form__submit">
-          <span>Invia RSVP</span>
-        </button>
-      </form>
+  <label for="number_participants">Quanti partecipanti (incluso te)?</label>
+  <input
+    type="number"
+    id="number_participants"
+    name="number_participants"
+    min="1"
+    value="1"
+    required />
+
+  <div id="additional_participants"></div>
+
+  <label for="question1">
+    Segui una dieta alimentare particolare?
+    <small>(Celiaca, vegetariana, vegana, ecc..)</small>
+  </label>
+  <textarea id="question1" name="question1" rows="2"></textarea>
+
+  <label for="question2">
+    Ci sono allergie e/o intolleranze alimentari di cui dovremmo mettere al corrente il ristorante?
+  </label>
+  <textarea id="question2" name="question2" rows="2"></textarea>
+
+  <button type="submit" class="pageclip-form__submit">
+    <span>Invia RSVP</span>
+  </button>
+</form>
+
     </div>
   </div>
 
