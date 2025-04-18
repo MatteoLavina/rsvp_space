@@ -72,57 +72,39 @@
       <!-- RSVP Form -->
       <!-- RSVP Form powered by Formspree, using your existing CSS classes -->
         <form
-  action="https://formspree.io/f/mrbpwdon"
-  method="POST"
-  class="pageclip-form">
+        action="https://send.pageclip.co/MO2kJKQLnfVZ38xNrUY2QW6MXZPbcZQH/RSVP"
+        class="pageclip-form"
+        method="POST">
+        <h2>Conferma la tua presenza</h2>
 
-  <!-- redirect to your thank‑you page -->
-  <input type="hidden" name="_next"   value="thankyou.html">
-  <!-- optional: ask Formspree to return JSON -->
-  <input type="hidden" name="_format" value="json">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required />
 
-  <h2>Conferma la tua presenza</h2>
+        <label for="surname">Cognome</label>
+        <input type="text" id="surname" name="surname" required />
 
-  <label for="name">Nome</label>
-  <input type="text" id="name" name="name" required />
+        <label for="confirmation">Parteciperai?</label>
+        <select id="confirmation" name="confirmation" required>
+          <option value="">-- Seleziona --</option>
+          <option value="yes">Sì</option>
+		  <option value="yes_cake">Si, solo per taglio torta</option>
+          <option value="no">No</option>
+        </select>
 
-  <label for="surname">Cognome</label>
-  <input type="text" id="surname" name="surname" required />
+		<label for="number_participants">Quanti partecipanti (incluso te)?</label>
+		<input type="number" id="number_participants" name="number_participants" min="1" value="1" required />
 
-  <label for="confirmation">Parteciperai?</label>
-  <select id="confirmation" name="confirmation" required>
-    <option value="">-- Seleziona --</option>
-    <option value="yes">Sì</option>
-    <option value="yes_cake">Sì, solo per taglio torta</option>
-    <option value="no">No</option>
-  </select>
+		<div id="additional_participants"></div>
+        <label for="question1">Segui una dieta alimentare particolare? (Celiaca, vegetariana, vegana, ecc..)</label>
+        <textarea id="question1" name="question1" rows="2"></textarea>
 
-  <label for="number_participants">Quanti partecipanti (incluso te)?</label>
-  <input
-    type="number"
-    id="number_participants"
-    name="number_participants"
-    min="1"
-    value="1"
-    required />
+        <label for="question2">Ci sono allergie e/o intolleranze alimentari di cui dovremmo mettere al corrente il ristorante?</label>
+        <textarea id="question2" name="question2" rows="2"></textarea>
 
-  <div id="additional_participants"></div>
-
-  <label for="question1">
-    Segui una dieta alimentare particolare?
-    <small>(Celiaca, vegetariana, vegana, ecc..)</small>
-  </label>
-  <textarea id="question1" name="question1" rows="2"></textarea>
-
-  <label for="question2">
-    Ci sono allergie e/o intolleranze alimentari di cui dovremmo mettere al corrente il ristorante?
-  </label>
-  <textarea id="question2" name="question2" rows="2"></textarea>
-
-  <button type="submit" class="pageclip-form__submit">
-    <span>Invia RSVP</span>
-  </button>
-</form>
+        <button type="submit" class="pageclip-form__submit">
+          <span>Invia RSVP</span>
+        </button>
+      </form>
 
     </div>
   </div>
@@ -137,17 +119,6 @@
   <!-- Additional Partecipants Script -->
   <script src="assets/js/additional_partecipants.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      Pageclip.form(document.querySelector('.pageclip-form'), {
-        onSubmit: function () {
-          setTimeout(function () {
-            window.location.href = "thankyou.html";
-          }, 500); // piccolo delay per sicurezza
-        }
-      });
-    });
-  </script>
   <!-- SNIPPET PostHog (analytics) -->
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
